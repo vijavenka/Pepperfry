@@ -15,7 +15,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/chromedriver");
+        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.pepperfry.com/");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -41,6 +41,8 @@ public class Main {
             results.add(Integer.valueOf(resultStr[1].replaceAll(",","")));
         }
         results.stream().forEach(System.out::println);
+
+        driver.quit();
     }
 }
 
