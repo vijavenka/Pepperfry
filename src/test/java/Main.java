@@ -17,9 +17,11 @@ public class Main {
 
         System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.get("https://www.pepperfry.com/");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
+        driver.get("https://www.pepperfry.com/");
+
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver,60);
 
         driver.switchTo().frame("webklipper-publisher-widget-container-notification-frame");
